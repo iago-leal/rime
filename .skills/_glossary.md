@@ -12,7 +12,7 @@ Léxico mínimo. Sem termos clínicos (decisão de design 2026-05-05).
 - **Demanda**: o que o usuário precisa resolver (intenção declarada).
 - **Clarificação**: rodada {sumário do entendimento → confirmação expressa do humano} aplicada antes de qualquer execução. Princípio C1.
 - **Blast radius**: raio de impacto de uma mudança, classificado em 🟥 (quebra — exige ADR), 🟨 (atenção — revisão manual), 🟩 (livre).
-- **Spec / SDD**: especificação ou design document de uma entidade do projeto.
+- **Spec / SDD**: especificação ou design document de uma entidade do projeto. **Convenção em `traceability/*.md`**: cada spec aparece como `### <nome-da-spec>` (h3); h2 reservado a meta-doc. `<nome-da-spec>` em `kebab-case` e idêntico nas 3 matrizes.
 - **Matriz de specs**: tripla `code-spec` (arquivo↔spec) + `spec-impact` (blast radius) + `spec-test` (spec↔testes). Núcleo do C8.
 - **ADR (Architecture Decision Record)**: registro numerado de decisão arquitetural irreversível, em `docs/adr/`.
 - **Disjuntor / Gate**: mecanismo que bloqueia execução sob condição (ex.: 🟥 sem ADR; gate de integração; F0) e exige decisão humana.

@@ -23,3 +23,11 @@ jobs:
           fetch-depth: 0
       - name: Validar invariantes da matriz tripartite
         run: ./.ci/traceability-check.sh
+
+  regression-tests:
+    name: regression-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Suíte de regressão do framework
+        run: bash tests/regressao/run.sh
