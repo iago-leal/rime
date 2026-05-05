@@ -1,12 +1,49 @@
-# rime v6
+# rime
 
-Framework lean, harness-agnóstico, iterativo+incremental e test-driven para produção de software com agentes LLM, com matriz de specs anti-regressão.
+> Framework lean, harness-agnóstico, iterativo+incremental e test-driven para produção de software com agentes LLM, com matriz de specs anti-regressão.
 
-Fusão deliberada de dois frameworks anteriores do mesmo autor (`mdcu-framework` + `_rime-v5`), ancorada em revisão sistemática de literatura agentic 2019–2026.
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![status](https://img.shields.io/badge/status-v0.1.0-orange)](#status)
 
-## Em uma frase
+`rime` prescreve um método em 6 skills + 1 motor de matriz, executável por qualquer harness (Claude Code, Antigravity, Codex), em que toda execução é precedida por **clarificação humana** e toda mudança estrutural deixa **trilha auditável**.
 
-`rime` v6 prescreve um método em 6 skills + 1 motor de matriz, executável por qualquer harness (Claude Code, Antigravity, Codex), em que toda execução é precedida por clarificação humana e toda mudança estrutural deixa trilha auditável.
+Fusão de dois frameworks anteriores do mesmo autor (`mdcu` clínico-baseado + `rime` v5 agentic-arquitetural), ancorada em revisão sistemática de literatura agentic 2019–2026.
+
+---
+
+## Quick start (5 min)
+
+Pré-requisitos: Bash 3.2+, Git, e um harness compatível (Claude Code, Antigravity, ou Codex via destino genérico).
+
+```bash
+# 1. Clonar
+git clone https://github.com/iago-leal/rime.git meu-projeto
+cd meu-projeto
+
+# 2. Gerar adaptadores para o harness (1 vez por máquina)
+./bin/sync-skills.sh
+
+# 3. Validar sincronia (sanity check)
+./bin/sync-skills.sh --check
+
+# 4. No harness, invocar bootstrap para extrair contrato técnico do seu projeto
+#    (em Claude Code: digite /bootstrap; em Antigravity: equivalente)
+
+# 5. Seguir o fluxo padrão para cada demanda nova
+#    /captura → /decisao? → /execucao → /operacao
+```
+
+Detalhe completo do fluxo em [`.skills/_commands.md`](.skills/_commands.md).
+
+---
+
+## Filosofia em 3 bullets
+
+1. **Clarificação antes de execução** — nenhuma ação técnica acontece sem sumarização do entendimento e confirmação humana expressa. O agente que ouve a demanda nunca a executa sozinho.
+2. **Matriz de specs com gate automático** — toda mudança que toca superfície marcada 🟥 exige ADR; o gate bloqueia merge sem isso.
+3. **Engine downstream desacoplável** — o harness é motor trocável; o framework prescreve método universal, adaptadores específicos por harness são gerados por script.
+
+---
 
 ## Os 10 princípios canônicos
 
@@ -23,7 +60,9 @@ Fusão deliberada de dois frameworks anteriores do mesmo autor (`mdcu-framework`
 | C9 | Governança e segurança auditáveis |
 | C10 | Engine downstream desacoplável |
 
-Detalhe e ancoragem em [.skills/_principles.md](.skills/_principles.md).
+Detalhe e ancoragem científica em [.skills/_principles.md](.skills/_principles.md).
+
+---
 
 ## As 6 skills
 
@@ -38,12 +77,7 @@ Detalhe e ancoragem em [.skills/_principles.md](.skills/_principles.md).
 
 E 1 motor (não-skill): [traceability/](traceability/) — matriz tripartite (`code-spec` × `spec-impact` × `spec-test`) + audit trail + smoke test em CI.
 
-## Como adotar num projeto novo
-
-1. Clonar/copiar este diretório para a raiz do projeto-cliente.
-2. Rodar `bin/sync-skills.sh` para gerar adaptadores do harness escolhido.
-3. Invocar a skill `bootstrap` (`/bootstrap` no harness) para extrair o contrato técnico.
-4. Seguir o fluxo `captura → decisao? → execucao → operacao` para cada demanda.
+---
 
 ## Modos de execução (D0)
 
@@ -55,10 +89,12 @@ E 1 motor (não-skill): [traceability/](traceability/) — matriz tripartite (`c
 
 Decisão tomada na fase 2 do `bootstrap`. Default recomendado para perfil não-engenheiro: **B**.
 
+---
+
 ## Estrutura
 
 ```
-v6/
+rime/
 ├── .skills/                  # fonte de verdade — markdown universal
 ├── .claude/skills/           # adaptador Claude Code (gerado)
 ├── .agents/skills/           # adaptador Antigravity (gerado)
@@ -73,21 +109,21 @@ v6/
 
 Detalhe em [ARCHITECTURE.md](ARCHITECTURE.md).
 
-## Documentação de design
-
-Diretório `/Users/iagoleal/dev/_rime/output/` contém o material de design da fusão:
-
-- `comparativo-mdcu-rime-v5.md` — comparativo dos antecessores.
-- `principios-cientificos.md` — destilação científica dos princípios.
-- `matriz-specs.md` — desenho da rastreabilidade tripartite.
-- `esqueleto-framework.md` — árvore de diretórios e decisões.
-- `skill-captura-poc.md`, `skills-restantes-poc.md`, `canonicos-poc.md` — POCs das skills e arquivos canônicos.
-- `templates-adr-commit-poc.md` — templates do ADR e do selo de commit.
-- `adaptadores-harness-poc.md` — script `sync-skills.sh` e CI.
+---
 
 ## Status
 
-Versão **0.1.0** — instanciação inicial em 2026-05-05. Smoke test E2E pendente.
+**v0.1.0** — instanciação inicial em 2026-05-05. Smoke test E2E aprovado (3/3 testes verdes em projeto-cliente fictício). Próximas iterações trazem `bin/setup`, suíte de testes do próprio framework, e mais exemplos de adoção real.
+
+Ver [CHANGELOG quando existir; histórico em commits].
+
+---
+
+## Como contribuir
+
+Ver [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
 
 ## Licença
 
