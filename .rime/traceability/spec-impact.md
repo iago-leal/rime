@@ -40,3 +40,10 @@ O nome da spec deve coincidir com a entrada em `code-spec.md` e (se houver) em `
 ### contrato-harness
 - impacto em adaptadores: 🟥 — qualquer mudança nos paths de carregamento dos canônicos (ex.: `.skills/_principles.md` → `.rime/skills/_principles.md`) força regeneração.
 - impacto em harness não-mapeado (Codex etc.): 🟨 — destino genérico em `.harness-generic/` cobre.
+
+### operacao-status
+- impacto em `.rime/skills/operacao.md`: 🟨 — adição de comando à tabela "Comandos"; aditivo, não quebra fluxos existentes.
+- impacto em `.rime/bin/`: 🟩 — novo script standalone; não renomeia nem altera scripts existentes.
+- impacto em `.rime/registro/` (lista-problemas, sessoes, passivos): 🟩 — apenas leitura; script não escreve.
+- impacto em `.rime/traceability/` e `.rime/docs/adr/`: 🟩 — apenas leitura.
+- impacto em adaptadores e harness: 🟩 — operacao.md é canônica; sync-skills regenera adaptadores normalmente.

@@ -11,6 +11,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TESTS=(
   "test-sync-skills.sh"
   "test-traceability-check.sh"
+  "test-operacao-status.sh"
 )
 
 TOTAL_FAIL=0
