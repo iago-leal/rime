@@ -1,5 +1,3 @@
-<!-- Gerado de .rime/skills/salvaguarda.md por .rime/bin/sync-skills.sh — não editar diretamente -->
-
 ---
 name: salvaguarda
 version: 0.1.0

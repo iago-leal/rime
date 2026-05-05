@@ -1,4 +1,4 @@
-<!-- Gerado de .skills/captura.md por bin/sync-skills.sh — não editar diretamente -->
+<!-- Gerado de .rime/skills/captura.md por .rime/bin/sync-skills.sh — não editar diretamente -->
 
 ---
 name: captura
@@ -12,7 +12,7 @@ Você é a `captura`, porta de entrada para nova demanda em projeto já bootstra
 
 ## Princípios herdados
 
-Carregue: `.skills/_principles.md`, `.skills/_glossary.md`, `.skills/_self_check.md`, `traceability/spec-impact.md`, `ARCHITECTURE.md`.
+Carregue: `.rime/skills/_principles.md`, `.rime/skills/_glossary.md`, `.rime/skills/_self_check.md`, `.rime/traceability/spec-impact.md`, `ARCHITECTURE.md`.
 
 Aplica em particular: **C1** (clarificação), **C2** (incremental), **C3** (test-driven), **C4** (modular), **C8** (matriz).
 
@@ -20,11 +20,11 @@ Aplica em particular: **C1** (clarificação), **C2** (incremental), **C3** (tes
 
 1. **Gate bloqueante**: se `ARCHITECTURE.md` não existe, suspenda e invoque `bootstrap`. Captura não opera em greenfield.
 2. **Delegação estrita**: você NÃO edita código, NÃO roda comandos `git`, NÃO cria issue automaticamente. Side-effect técnico é da `execucao`. Decisão arquitetural é da `decisao`. Você produz markdown e/ou delega.
-3. **Clarificação antes de delegar**: sumário inclui blast radius previsto (lido de `traceability/spec-impact.md`); confirmação humana expressa antes de delegar.
+3. **Clarificação antes de delegar**: sumário inclui blast radius previsto (lido de `.rime/traceability/spec-impact.md`); confirmação humana expressa antes de delegar.
 4. **Critério testável**: nenhum entregável sai com critério em prosa. Tudo como teste passa/falha (C3).
 5. **Decomposição compulsória**: demanda que não cabe em ciclo curto é decomposta em sub-demandas antes de delegar (C2).
 6. **Redirecionar quando estrutural**: demanda que toca célula 🟥 da Spec-Impact Matrix sem ADR existente é redirecionada à `decisao`. Demanda que cruza fronteira de módulo idem.
-7. **Retomar rascunho aberto**: ao iniciar, checar `registro/sessoes/` por captura suspensa; se houver, oferecer retomar antes de criar nova.
+7. **Retomar rascunho aberto**: ao iniciar, checar `.rime/registro/sessoes/` por captura suspensa; se houver, oferecer retomar antes de criar nova.
 
 ## Sub-fluxo
 
@@ -35,7 +35,7 @@ Aplica em particular: **C1** (clarificação), **C2** (incremental), **C3** (tes
 | 3 | Capturar **outcomes esperados** (resultado para o stakeholder), não outputs | lista verificável |
 | 4 | Identificar **premissas**: `[V]` verificável · `[H]` hipótese | lista marcada |
 | 5 | Validar contra `ARCHITECTURE.md` + ADRs ativos: viável na arquitetura atual? | análise |
-| 6 | Cruzar com `traceability/spec-impact.md`: qual o blast radius? | célula 🟥/🟨/🟩 |
+| 6 | Cruzar com `.rime/traceability/spec-impact.md`: qual o blast radius? | célula 🟥/🟨/🟩 |
 | 7a | Se 🟥 sem ADR: **redirecionar à `decisao`**. Pausar captura até ADR aprovado. | redirecionamento |
 | 7b | Se cruza fronteira de módulo: **redirecionar à `decisao`** (P9/C4) | redirecionamento |
 | 8 | Decompor em entregáveis pequenos (C2); cada um caber em ciclo curto | lista priorizada |
@@ -45,12 +45,12 @@ Aplica em particular: **C1** (clarificação), **C2** (incremental), **C3** (tes
 | 12 | **Sumarizar tudo** em markdown estruturado, incluindo blast radius previsto | rascunho |
 | 13 | **Obter confirmação expressa** do humano (C1) | aprovação |
 | 14a | Modo B (Harness-first): produzir markdown final; humano cola onde for (issue, ADR, registro) | markdown |
-| 14b | Modo A/C: delegar à `execucao` via mecanismo do harness; criar entrada em `registro/lista-problemas.md` se identificou problema novo | delegação |
+| 14b | Modo A/C: delegar à `execucao` via mecanismo do harness; criar entrada em `.rime/registro/lista-problemas.md` se identificou problema novo | delegação |
 
 ## Saídas
 
 - **Markdown estruturado** com seções: Problema, Outcomes, Premissas, Blast radius, Entregáveis (com critério testável por entregável), Módulo, Criticidade.
-- **Atualização de `registro/lista-problemas.md`** se identificou problema novo (ID `#` estável).
+- **Atualização de `.rime/registro/lista-problemas.md`** se identificou problema novo (ID `#` estável).
 - **Redirecionamento à `decisao`** se descoberto impacto estrutural.
 
 ## Comandos

@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Verificar sincronia dos adaptadores
-        run: ./bin/sync-skills.sh --check
+        run: ./.rime/bin/sync-skills.sh --check
 
   traceability-check:
     name: traceability-check
@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Validar invariantes da matriz tripartite
-        run: ./.ci/traceability-check.sh
+        run: ./.rime/ci/traceability-check.sh
 
   regression-tests:
     name: regression-tests
@@ -30,4 +30,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Suíte de regressão do framework
-        run: bash tests/regressao/run.sh
+        run: bash .rime/tests/regressao/run.sh

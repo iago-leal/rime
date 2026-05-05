@@ -21,10 +21,10 @@ git clone https://github.com/iago-leal/rime.git meu-projeto
 cd meu-projeto
 
 # 2. Gerar adaptadores para o harness (1 vez por máquina)
-./bin/sync-skills.sh
+./.rime/bin/sync-skills.sh
 
 # 3. Validar sincronia (sanity check)
-./bin/sync-skills.sh --check
+./.rime/bin/sync-skills.sh --check
 
 # 4. No harness, invocar bootstrap para extrair contrato técnico do seu projeto
 #    (em Claude Code: digite /bootstrap; em Antigravity: equivalente)
@@ -33,7 +33,7 @@ cd meu-projeto
 #    /captura → /decisao? → /execucao → /operacao
 ```
 
-Detalhe completo do fluxo em [`.skills/_commands.md`](.skills/_commands.md).
+Detalhe completo do fluxo em [`.rime/skills/_commands.md`](.rime/skills/_commands.md).
 
 ---
 
@@ -60,7 +60,7 @@ Detalhe completo do fluxo em [`.skills/_commands.md`](.skills/_commands.md).
 | C9 | Governança e segurança auditáveis |
 | C10 | Engine downstream desacoplável |
 
-Detalhe e ancoragem científica em [.skills/_principles.md](.skills/_principles.md).
+Detalhe e ancoragem científica em [.rime/skills/_principles.md](.rime/skills/_principles.md).
 
 ---
 
@@ -68,14 +68,14 @@ Detalhe e ancoragem científica em [.skills/_principles.md](.skills/_principles.
 
 | Skill | Função |
 |---|---|
-| [bootstrap](.skills/bootstrap.md) | Inicialização de projeto (greenfield) |
-| [captura](.skills/captura.md) | Captura de demanda em projeto operacional |
-| [decisao](.skills/decisao.md) | Decisão arquitetural (ADR + matriz) |
-| [execucao](.skills/execucao.md) | Delegação técnica disciplinada (test-first, gates) |
-| [operacao](.skills/operacao.md) | Manutenção M1–M6 + fechamento |
-| [salvaguarda](.skills/salvaguarda.md) | Segurança auditável + F0 + postmortem blameless |
+| [bootstrap](.rime/skills/bootstrap.md) | Inicialização de projeto (greenfield) |
+| [captura](.rime/skills/captura.md) | Captura de demanda em projeto operacional |
+| [decisao](.rime/skills/decisao.md) | Decisão arquitetural (ADR + matriz) |
+| [execucao](.rime/skills/execucao.md) | Delegação técnica disciplinada (test-first, gates) |
+| [operacao](.rime/skills/operacao.md) | Manutenção M1–M6 + fechamento |
+| [salvaguarda](.rime/skills/salvaguarda.md) | Segurança auditável + F0 + postmortem blameless |
 
-E 1 motor (não-skill): [traceability/](traceability/) — matriz tripartite (`code-spec` × `spec-impact` × `spec-test`) + audit trail + smoke test em CI.
+E 1 motor (não-skill): [.rime/traceability/](.rime/traceability/) — matriz tripartite (`code-spec` × `spec-impact` × `spec-test`) + audit trail + smoke test em CI.
 
 ---
 
@@ -95,16 +95,16 @@ Decisão tomada na fase 2 do `bootstrap`. Default recomendado para perfil não-e
 
 ```
 rime/
-├── .skills/                  # fonte de verdade — markdown universal
+├── .rime/skills/                  # fonte de verdade — markdown universal
 ├── .claude/skills/           # adaptador Claude Code (gerado)
 ├── .agents/skills/           # adaptador Antigravity (gerado)
 ├── .harness-generic/         # adaptador genérico (gerado)
-├── traceability/             # matriz tripartite + changelog
+├── .rime/traceability/             # matriz tripartite + changelog
 ├── docs/{adr,templates,threat-models,postmortems,prompts}/
-├── registro/{lista-problemas,passivos,sessoes/}
-├── tests/regressao/
-├── .ci/traceability-check.sh
-└── bin/sync-skills.sh
+├── .rime/registro/{lista-problemas,passivos,sessoes/}
+├── .rime/tests/regressao/
+├── .rime/ci/traceability-check.sh
+└── .rime/bin/sync-skills.sh
 ```
 
 Detalhe em [ARCHITECTURE.md](ARCHITECTURE.md).
@@ -113,7 +113,7 @@ Detalhe em [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Status
 
-**v0.1.0** — instanciação inicial em 2026-05-05. Smoke test E2E aprovado (3/3 testes verdes em projeto-cliente fictício). Próximas iterações trazem `bin/setup`, suíte de testes do próprio framework, e mais exemplos de adoção real.
+**v0.1.0** — instanciação inicial em 2026-05-05. Smoke test E2E aprovado (3/3 testes verdes em projeto-cliente fictício). Próximas iterações trazem `.rime/bin/setup`, suíte de testes do próprio framework, e mais exemplos de adoção real.
 
 Ver [CHANGELOG quando existir; histórico em commits].
 

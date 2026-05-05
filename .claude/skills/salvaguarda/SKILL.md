@@ -1,4 +1,4 @@
-<!-- Gerado de .skills/salvaguarda.md por bin/sync-skills.sh — não editar diretamente -->
+<!-- Gerado de .rime/skills/salvaguarda.md por .rime/bin/sync-skills.sh — não editar diretamente -->
 
 ---
 name: salvaguarda
@@ -12,7 +12,7 @@ Você é a `salvaguarda`, responsável pela segurança e governança de incident
 
 ## Princípios herdados
 
-Carregue: `.skills/_principles.md`, `.skills/_glossary.md`, `.skills/_self_check.md`, `ARCHITECTURE.md`, `traceability/spec-impact.md`, `docs/threat-models/`, `docs/postmortems/`.
+Carregue: `.rime/skills/_principles.md`, `.rime/skills/_glossary.md`, `.rime/skills/_self_check.md`, `ARCHITECTURE.md`, `.rime/traceability/spec-impact.md`, `.rime/docs/threat-models/`, `.rime/docs/postmortems/`.
 
 Aplica em particular: **C1**, **C6**, **C9**.
 
@@ -31,13 +31,13 @@ Aplica em particular: **C1**, **C6**, **C9**.
 ### Modo Auditoria (`/salvaguarda`)
 1. Carregar última auditoria; checar `>90d`.
 2. Aplicar STRIDE-leve; cobrir LGPD/HIPAA quando aplicável.
-3. Atualizar `docs/threat-models/<data>.md`.
-4. Findings → `registro/lista-problemas.md` com severidade.
+3. Atualizar `.rime/docs/threat-models/<data>.md`.
+4. Findings → `.rime/registro/lista-problemas.md` com severidade.
 
 ### Modo Threat-model (`/salvaguarda threat-model`)
 1. Receber descrição da feature em curso.
 2. Aplicar STRIDE; identificar superfícies de ataque.
-3. Persistir `docs/threat-models/<feature>.md`.
+3. Persistir `.rime/docs/threat-models/<feature>.md`.
 4. Sinalizar à skill em curso (geralmente `captura` ou `decisao`) que pode prosseguir.
 
 ### Modo Incidente F0 (`/salvaguarda incidente`)
@@ -54,15 +54,15 @@ Ao iniciar F0: SUSPENDE sessão em curso de outra skill (sem apagar). Após reso
 
 ### Modo Postmortem (`/salvaguarda postmortem`)
 1. Atacar causa estrutural; vetar redação com nome próprio.
-2. Persistir `docs/postmortems/<data>.md`.
-3. Atualizar `traceability/spec-impact.md` se descoberta mudança estrutural.
+2. Persistir `.rime/docs/postmortems/<data>.md`.
+3. Atualizar `.rime/traceability/spec-impact.md` se descoberta mudança estrutural.
 
 ## Saídas
 
-- `docs/threat-models/<data ou feature>.md`.
-- `docs/postmortems/<data>.md` (após F0).
-- Entradas em `registro/lista-problemas.md` para findings.
-- Atualização de `traceability/spec-impact.md` quando aplicável.
+- `.rime/docs/threat-models/<data ou feature>.md`.
+- `.rime/docs/postmortems/<data>.md` (após F0).
+- Entradas em `.rime/registro/lista-problemas.md` para findings.
+- Atualização de `.rime/traceability/spec-impact.md` quando aplicável.
 
 ## Comandos
 

@@ -1,4 +1,4 @@
-<!-- Gerado de .skills/execucao.md por bin/sync-skills.sh — não editar diretamente -->
+<!-- Gerado de .rime/skills/execucao.md por .rime/bin/sync-skills.sh — não editar diretamente -->
 
 ---
 name: execucao
@@ -12,7 +12,7 @@ Você é a `execucao`, responsável por materializar planos confirmados em códi
 
 ## Princípios herdados
 
-Carregue: `.skills/_principles.md`, `.skills/_glossary.md`, `.skills/_self_check.md`, `ARCHITECTURE.md`, `traceability/spec-impact.md`, `traceability/spec-test.md`.
+Carregue: `.rime/skills/_principles.md`, `.rime/skills/_glossary.md`, `.rime/skills/_self_check.md`, `ARCHITECTURE.md`, `.rime/traceability/spec-impact.md`, `.rime/traceability/spec-test.md`.
 
 Aplica em particular: **C2**, **C3**, **C7**, **C8**, **C10**.
 
@@ -36,8 +36,8 @@ Aplica em particular: **C2**, **C3**, **C7**, **C8**, **C10**.
 |   3a | Escrever teste que falha cobrindo o critério `passa/falha` | commit do teste |
 |   3b | Implementar mínimo para passar | commit da impl |
 |   3c | Rodar suíte completa; verificar não-regressão | confirmação |
-|   3d | Atualizar `traceability/spec-test.md` (spec ↔ teste novo) | commit |
-| 4 | Gate de Integração: rodar `bin/traceability-check` + comandos `test`/`build` | resultado |
+|   3d | Atualizar `.rime/traceability/spec-test.md` (spec ↔ teste novo) | commit |
+| 4 | Gate de Integração: rodar `.rime/bin/traceability-check` + comandos `test`/`build` | resultado |
 | 5 | Se gate falhar com 🟥 sem ADR: devolver à `decisao`; pausar | redirecionamento |
 | 6 | Se reenquadramento (mudança de plano em curso): incrementar contador 1/2; em 2/2 → Exit Protocol | controle |
 | 7 | Sumarizar resultado + sinalizar à `operacao` para fechamento | mensagem |
@@ -47,13 +47,13 @@ Aplica em particular: **C2**, **C3**, **C7**, **C8**, **C10**.
 - Commits no branch (semântica separada: teste + impl + matriz).
 - Smoke test verde.
 - Suíte de testes verde.
-- Atualização de `traceability/spec-test.md`.
+- Atualização de `.rime/traceability/spec-test.md`.
 - Sinalização para `operacao`.
 
 ## Comandos
 
 - `/execucao` — receber plano e executar.
-- `/execucao gate` — rodar `bin/traceability-check` + `test`/`build`.
+- `/execucao gate` — rodar `.rime/bin/traceability-check` + `test`/`build`.
 - `/execucao fechar` — encerrar bloco e transferir para `operacao`.
 
 ## Anti-padrões
@@ -71,4 +71,4 @@ Aplica em particular: **C2**, **C3**, **C7**, **C8**, **C10**.
 Aplica `_self_check.md` (global) + os itens abaixo:
 
 1. Teste falha primeiro, código depois?
-2. `traceability/spec-test.md` foi atualizado para o entregável?
+2. `.rime/traceability/spec-test.md` foi atualizado para o entregável?

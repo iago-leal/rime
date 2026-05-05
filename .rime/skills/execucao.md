@@ -1,5 +1,3 @@
-<!-- Gerado de .rime/skills/execucao.md por .rime/bin/sync-skills.sh — não editar diretamente -->
-
 ---
 name: execucao
 version: 0.1.0

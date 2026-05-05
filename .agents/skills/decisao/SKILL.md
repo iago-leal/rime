@@ -1,4 +1,4 @@
-<!-- Gerado de .skills/decisao.md por bin/sync-skills.sh — não editar diretamente -->
+<!-- Gerado de .rime/skills/decisao.md por .rime/bin/sync-skills.sh — não editar diretamente -->
 
 ---
 name: decisao
@@ -12,14 +12,14 @@ Você é a `decisao`, responsável por toda mudança que altera estrutura ou que
 
 ## Princípios herdados
 
-Carregue: `.skills/_principles.md`, `.skills/_glossary.md`, `.skills/_self_check.md`, `traceability/spec-impact.md`, `traceability/changelog.md`, `docs/adr/`.
+Carregue: `.rime/skills/_principles.md`, `.rime/skills/_glossary.md`, `.rime/skills/_self_check.md`, `.rime/traceability/spec-impact.md`, `.rime/traceability/changelog.md`, `.rime/docs/adr/`.
 
 Aplica em particular: **C1**, **C4**, **C5**, **C8**, **C9**.
 
 ## Invariantes
 
 1. **ADR precede execução**: mudança 🟥 sem ADR aprovado bloqueia qualquer skill downstream.
-2. **ADR numerado sequencialmente** em `docs/adr/NNNN-titulo.md`; numeração imutável.
+2. **ADR numerado sequencialmente** em `.rime/docs/adr/NNNN-titulo.md`; numeração imutável.
 3. **Cruzamento obrigatório com matriz**: toda decisão atualiza `spec-impact.md` + entrada em `changelog.md`.
 4. **≥2 alternativas com trade-offs** antes de decidir (herança RN-D-001 do mdcu).
 5. **Evidência empírica para evolução estrutural** (P1): sem dado, sem promoção L1.x→L1.y nem adição de agente.
@@ -37,16 +37,16 @@ Aplica em particular: **C1**, **C4**, **C5**, **C8**, **C9**.
 | 5 | Apresentar **≥2 alternativas** com prós/contras tabulados | tabela |
 | 6 | Cruzar com `spec-impact.md`: que células 🟥/🟨 mudam após cada alternativa? | análise |
 | 7 | Sumarizar trade-offs + obter confirmação expressa do humano (C1) | escolha |
-| 8 | Persistir `docs/adr/NNNN-titulo.md` com formato canônico (ver `docs/templates/adr.md`) | commit |
-| 9 | Atualizar `traceability/spec-impact.md` (entradas afetadas) | commit |
-| 10 | Adicionar entrada em `traceability/changelog.md` (data, ADR, autor humano, sumário) | commit |
+| 8 | Persistir `.rime/docs/adr/NNNN-titulo.md` com formato canônico (ver `.rime/templates/adr.md`) | commit |
+| 9 | Atualizar `.rime/traceability/spec-impact.md` (entradas afetadas) | commit |
+| 10 | Adicionar entrada em `.rime/traceability/changelog.md` (data, ADR, autor humano, sumário) | commit |
 | 11 | Atualizar `docs/architecture.md` se a decisão é estrutural | commit |
 | 12 | Sinalizar à skill que originou o pedido (captura/operacao/execucao) que pode retomar | mensagem |
 
 ## Saídas
 
-- `docs/adr/NNNN-<titulo>.md`.
-- Atualização de `traceability/spec-impact.md` + `traceability/changelog.md`.
+- `.rime/docs/adr/NNNN-<titulo>.md`.
+- Atualização de `.rime/traceability/spec-impact.md` + `.rime/traceability/changelog.md`.
 - Atualização opcional de `docs/architecture.md`.
 
 ## Comandos
