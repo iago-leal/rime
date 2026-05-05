@@ -18,14 +18,16 @@ No início do ciclo de fechamento (`/operacao fechar`) ou em `bin/sync-skills.sh
 
 ## Convenção
 
-Cada bloco tem o formato:
+Cada bloco tem o formato (h3 reservado a specs; h2 reservado a meta-docs):
 
 ```
-## <nome-da-spec>
+### <nome-da-spec>
 - impacto em <componente A>: 🟥 — <descrição>
 - impacto em <componente B>: 🟨 — <descrição>
 - impacto em <componente C>: 🟩
 ```
+
+O nome da spec deve coincidir com a entrada em `code-spec.md` e (se houver) em `spec-test.md`.
 
 ---
 

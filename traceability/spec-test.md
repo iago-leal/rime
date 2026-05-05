@@ -6,17 +6,17 @@ Mapeamento 1:N entre cada spec e os testes que a validam.
 
 ## Convenção
 
-Cada bloco tem o formato:
+Cada bloco tem o formato (h3 reservado a specs; h2 reservado a meta-docs):
 
 ```
-## <nome-da-spec>
+### <nome-da-spec>
 - teste: `tests/<arquivo>::<caso>` — <descrição curta>
 - teste: `tests/regressao/<arquivo>::<caso>` — <descrição>
 - comando de validação alternativo: `<comando>`
 - link de issue (caso teste ainda não exista): `#<N>`
 ```
 
-Uma spec pode ter múltiplas entradas. A coluna "como validar" do critério de aceitação (skill `captura`, passo 9) **deve** apontar para algo que entre nesta matriz.
+Uma spec pode ter múltiplas entradas. A coluna "como validar" do critério de aceitação (skill `captura`, passo 9) **deve** apontar para algo que entre nesta matriz. Nome da spec coincide com `code-spec.md` e `spec-impact.md`.
 
 ---
 

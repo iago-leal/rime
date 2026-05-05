@@ -6,17 +6,17 @@ Mapeamento 1:1 ou 1:N entre arquivos físicos do projeto e suas especificações
 
 ## Convenção
 
-Cada entrada tem o formato:
+Cada entrada tem o formato (h3 reservado a specs; h2 reservado a meta-docs):
 
 ```
-## <nome-da-spec>
+### <nome-da-spec>
 - arquivo: `<caminho>`
 - spec: `<caminho da SDD ou seção>`
 - responsável: @<handle>
 - última revisão: YYYY-MM-DD
 ```
 
-`<nome-da-spec>` é o identificador estável usado também em `spec-impact.md` e `spec-test.md`.
+`<nome-da-spec>` é o identificador estável usado também em `spec-impact.md` e `spec-test.md`. Sem espaços, formato `kebab-case`.
 
 ---
 

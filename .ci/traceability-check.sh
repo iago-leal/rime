@@ -27,15 +27,14 @@ for f in code-spec.md spec-impact.md spec-test.md changelog.md; do
 done
 (( EXIT == 0 )) || exit $EXIT
 
-# Invariante 1: specs em spec-impact.md devem aparecer em code-spec.md.
-# Heurística simples: marcadores começando com `## ` em ambos os arquivos.
-specs_impact=$(awk '/^## /{print $2}' "$TRACE_DIR/spec-impact.md" 2>/dev/null | sort -u)
-specs_code=$(awk '/^## /{print $2}' "$TRACE_DIR/code-spec.md" 2>/dev/null | sort -u)
+# Convenção do framework: specs usam h3 (`### <nome>`), reservado h2 para meta-docs.
+specs_impact=$(awk '/^### /{print $2}' "$TRACE_DIR/spec-impact.md" 2>/dev/null | sort -u)
 
+# Invariante 1: specs em spec-impact.md devem aparecer em code-spec.md.
 if [[ -n "$specs_impact" ]]; then
   while IFS= read -r spec; do
     [[ -z "$spec" ]] && continue
-    if ! grep -q "^## $spec\b" "$TRACE_DIR/code-spec.md"; then
+    if ! grep -q "^### $spec\b" "$TRACE_DIR/code-spec.md"; then
       fail "spec '$spec' presente em spec-impact.md mas ausente em code-spec.md"
     fi
   done <<< "$specs_impact"
@@ -45,7 +44,7 @@ fi
 if [[ -n "$specs_impact" ]]; then
   while IFS= read -r spec; do
     [[ -z "$spec" ]] && continue
-    if ! grep -q "^## $spec\b" "$TRACE_DIR/spec-test.md"; then
+    if ! grep -q "^### $spec\b" "$TRACE_DIR/spec-test.md"; then
       warn "spec '$spec' sem entrada em spec-test.md (subespecificação comportamental)"
     fi
   done <<< "$specs_impact"
