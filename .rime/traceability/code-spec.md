@@ -33,3 +33,9 @@ Para o framework rime v6 em si: as 6 skills + 4 canônicos vivem em `.rime/skill
 - spec: `.rime/skills/_glossary.md` (entrada "Engine downstream") + `.rime/ARCHITECTURE.md`
 - responsável: @iagoleal
 - última revisão: 2026-05-05
+
+### operacao-status
+- arquivo: `.rime/bin/operacao-status.sh` + entrada `/operacao status` na tabela "Comandos" de `.rime/skills/operacao.md`
+- spec: `.rime/skills/operacao.md` (seção "Comandos") — script é agregador determinístico de 5 fontes do registro
+- responsável: @iagoleal
+- última revisão: 2026-05-05

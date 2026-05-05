@@ -30,3 +30,10 @@ Uma spec pode ter múltiplas entradas. A coluna "como validar" do critério de a
 - teste: `.rime/tests/regressao/test-sync-skills.sh::"--check detecta drift manual"`
 - teste: `.rime/tests/regressao/test-sync-skills.sh::"canônicos _*.md não viram adaptador"`
 - comando: `.rime/bin/sync-skills.sh --check`
+
+### operacao-status
+- teste: `.rime/tests/regressao/test-operacao-status.sh::"5 seções na ordem correta"`
+- teste: `.rime/tests/regressao/test-operacao-status.sh::"fixture vazio degrada graciosamente"`
+- teste: `.rime/tests/regressao/test-operacao-status.sh::"última sessão é a mais recente"`
+- teste: `.rime/tests/regressao/test-operacao-status.sh::"ADRs em ordem decrescente até 5"`
+- comando: `bash .rime/bin/operacao-status.sh`

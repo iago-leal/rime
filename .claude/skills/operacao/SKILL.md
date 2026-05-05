@@ -51,6 +51,7 @@ Aplica em particular: **C2**, **C3**, **C4**, **C9**.
 
 - `/operacao` — operação cotidiana; classifica em M1–M6.
 - `/operacao lista` — listar problemas ativos.
+- `/operacao status` — foto consolidada para re-orientação após pausa (delega para `.rime/bin/operacao-status.sh`).
 - `/operacao revisar` — revisar problemas, mover ativos↔passivos.
 - `/operacao fechar` — fechar sessão + selo longitudinal.
 
