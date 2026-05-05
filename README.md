@@ -91,4 +91,4 @@ Versão **0.1.0** — instanciação inicial em 2026-05-05. Smoke test E2E pende
 
 ## Licença
 
-A definir (uso interno por enquanto).
+[AGPL-3.0](LICENSE) — quem usar (inclusive em SaaS) deve manter o código derivado aberto sob a mesma licença.
