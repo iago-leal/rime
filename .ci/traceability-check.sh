@@ -28,13 +28,30 @@ done
 (( EXIT == 0 )) || exit $EXIT
 
 # Convenção do framework: specs usam h3 (`### <nome>`), reservado h2 para meta-docs.
-specs_impact=$(awk '/^### /{print $2}' "$TRACE_DIR/spec-impact.md" 2>/dev/null | sort -u)
+# Heurística ignora linhas dentro de fences markdown (``` ... ```) — exemplos de uso
+# em meta-doc não devem ser tratados como specs reais.
+extract_specs() {
+  awk '
+    /^```/ { in_block = !in_block; next }
+    /^### / && !in_block { print $2 }
+  ' "$1" | sort -u
+}
+
+specs_impact=$(extract_specs "$TRACE_DIR/spec-impact.md")
+
+has_spec_h3() {
+  awk -v target="$2" '
+    /^```/ { in_block = !in_block; next }
+    /^### / && !in_block { if ($2 == target) found = 1 }
+    END { exit (found ? 0 : 1) }
+  ' "$1"
+}
 
 # Invariante 1: specs em spec-impact.md devem aparecer em code-spec.md.
 if [[ -n "$specs_impact" ]]; then
   while IFS= read -r spec; do
     [[ -z "$spec" ]] && continue
-    if ! grep -q "^### $spec\b" "$TRACE_DIR/code-spec.md"; then
+    if ! has_spec_h3 "$TRACE_DIR/code-spec.md" "$spec"; then
       fail "spec '$spec' presente em spec-impact.md mas ausente em code-spec.md"
     fi
   done <<< "$specs_impact"
@@ -44,7 +61,7 @@ fi
 if [[ -n "$specs_impact" ]]; then
   while IFS= read -r spec; do
     [[ -z "$spec" ]] && continue
-    if ! grep -q "^### $spec\b" "$TRACE_DIR/spec-test.md"; then
+    if ! has_spec_h3 "$TRACE_DIR/spec-test.md" "$spec"; then
       warn "spec '$spec' sem entrada em spec-test.md (subespecificação comportamental)"
     fi
   done <<< "$specs_impact"
