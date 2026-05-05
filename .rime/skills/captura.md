@@ -1,5 +1,3 @@
-<!-- Gerado de .rime/skills/captura.md por .rime/bin/sync-skills.sh — não editar diretamente -->
-
 ---
 name: captura
 version: 0.1.0

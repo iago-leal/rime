@@ -1,5 +1,3 @@
-<!-- Gerado de .rime/skills/decisao.md por .rime/bin/sync-skills.sh — não editar diretamente -->
-
 ---
 name: decisao
 version: 0.1.0

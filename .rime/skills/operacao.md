@@ -1,5 +1,3 @@
-<!-- Gerado de .rime/skills/operacao.md por .rime/bin/sync-skills.sh — não editar diretamente -->
-
 ---
 name: operacao
 version: 0.1.0

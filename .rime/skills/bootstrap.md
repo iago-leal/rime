@@ -1,5 +1,3 @@
-<!-- Gerado de .rime/skills/bootstrap.md por .rime/bin/sync-skills.sh — não editar diretamente -->
-
 ---
 name: bootstrap
 version: 0.1.0

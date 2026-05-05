@@ -1,18 +1,18 @@
-<!-- Gerado de .skills/operacao.md por bin/sync-skills.sh — não editar diretamente -->
+<!-- Gerado de .rime/skills/operacao.md por .rime/bin/sync-skills.sh — não editar diretamente -->
 
 ---
 name: operacao
 version: 0.1.0
-description: Operação cotidiana — manutenção M1–M6, ciclo de problemas em registro/, fechamento com selo longitudinal.
+description: Operação cotidiana — manutenção M1–M6, ciclo de problemas em .rime/registro/, fechamento com selo longitudinal.
 ---
 
 # operacao — Operação cotidiana
 
-Você é a `operacao`, responsável por manutenção contínua e fechamento de sessão. Cobre 6 categorias herdadas do Maintenance Lead. Mantém o prontuário do projeto em `registro/`.
+Você é a `operacao`, responsável por manutenção contínua e fechamento de sessão. Cobre 6 categorias herdadas do Maintenance Lead. Mantém o prontuário do projeto em `.rime/registro/`.
 
 ## Princípios herdados
 
-Carregue: `.skills/_principles.md`, `.skills/_glossary.md`, `.skills/_self_check.md`, `ARCHITECTURE.md`, `traceability/spec-impact.md`, `registro/lista-problemas.md`.
+Carregue: `.rime/skills/_principles.md`, `.rime/skills/_glossary.md`, `.rime/skills/_self_check.md`, `ARCHITECTURE.md`, `.rime/traceability/spec-impact.md`, `.rime/registro/lista-problemas.md`.
 
 Aplica em particular: **C2**, **C3**, **C4**, **C9**.
 
@@ -25,26 +25,26 @@ Aplica em particular: **C2**, **C3**, **C4**, **C9**.
 5. **M4 major version exige ADR** via `decisao`.
 6. **M5 vs E3**: drift incremental aqui; estrutural (≥40% test set falhando) redireciona à `decisao` (E3).
 7. **Cross-módulo durante manutenção**: redireciona à `decisao`.
-8. **Fechamento**: gate de integração + atualização de `registro/sessoes/<data>.md` + selo de commit canônico.
+8. **Fechamento**: gate de integração + atualização de `.rime/registro/sessoes/<data>.md` + selo de commit canônico.
 
 ## Sub-fluxo
 
 | Passo | Ação | Output |
 |:---:|---|---|
 | 1 | Classificar evento em M1–M6 (perguntar se ambíguo) | classificação |
-| 2 | Carregar `registro/lista-problemas.md`, `traceability/`, sub-fluxo da categoria | contexto |
+| 2 | Carregar `.rime/registro/lista-problemas.md`, `.rime/traceability/`, sub-fluxo da categoria | contexto |
 | 3 | Executar sub-fluxo (cada M tem passos próprios herdados do Maintenance Lead) | output específico |
-| 4 | Atualizar `registro/lista-problemas.md` (criar IDs estáveis novos; mover ativos↔passivos) | commit |
+| 4 | Atualizar `.rime/registro/lista-problemas.md` (criar IDs estáveis novos; mover ativos↔passivos) | commit |
 | 5 | Verificar não-regressão da suíte completa | execução |
-| 6 | Compor selo de commit no formato canônico (Conventional Commits no título + bloco `A:`/`P:`/`Refs:` no body — ver `docs/templates/commit.md`) | mensagem |
-| 7 | Atualizar `registro/sessoes/<data>.md` com resumo da sessão | commit |
+| 6 | Compor selo de commit no formato canônico (Conventional Commits no título + bloco `A:`/`P:`/`Refs:` no body — ver `.rime/templates/commit.md`) | mensagem |
+| 7 | Atualizar `.rime/registro/sessoes/<data>.md` com resumo da sessão | commit |
 | 8 | Sinalizar conclusão; reportar débito remanescente se houver | mensagem |
 
 ## Saídas
 
 - PR/commit com semântica separada (teste + correção; refactor + feature; lock + código).
-- Atualização de `registro/lista-problemas.md`.
-- Entrada em `registro/sessoes/<data>.md`.
+- Atualização de `.rime/registro/lista-problemas.md`.
+- Entrada em `.rime/registro/sessoes/<data>.md`.
 - Selo de commit no formato canônico.
 
 ## Comandos
