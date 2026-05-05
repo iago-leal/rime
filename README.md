@@ -2,7 +2,7 @@
 
 > Framework lean, harness-agnóstico, iterativo+incremental e test-driven para produção de software com agentes LLM, com matriz de specs anti-regressão.
 
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![status](https://img.shields.io/badge/status-v0.1.0-orange)](#status)
 
 `rime` prescreve um método em 6 skills + 1 motor de matriz, executável por qualquer harness (Claude Code, Antigravity, Codex), em que toda execução é precedida por **clarificação humana** e toda mudança estrutural deixa **trilha auditável**.
@@ -127,4 +127,4 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Licença
 
-[AGPL-3.0](LICENSE) — quem usar (inclusive em SaaS) deve manter o código derivado aberto sob a mesma licença.
+[MIT](LICENSE) — uso permissivo. Pode ser incorporado em projetos comerciais ou fechados sem obrigação de abrir derivados.

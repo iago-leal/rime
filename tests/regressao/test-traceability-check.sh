@@ -89,6 +89,24 @@ EOF
   && pass "h2 corretamente ignorado" \
   || fail "h2 'Pesos' tratado como spec (regressão da heurística)"
 
+# Caso 5: regressão da heurística — h3 dentro de fence markdown não deve ser spec
+echo "5. h3 dentro de fence markdown (exemplo de meta-doc) deve ser ignorado"
+F="$(setup_fixture)"
+cat >> "$F/traceability/spec-impact.md" <<'EOF'
+
+## Convenção
+Cada spec usa este formato:
+
+```
+### <nome-da-spec>
+- impacto em foo: 🟩
+```
+EOF
+# code-spec NÃO contém "<nome-da-spec>" — se a heurística pegar, vai falhar
+( cd "$F" && ./.ci/traceability-check.sh ) >/dev/null 2>&1 \
+  && pass "h3 dentro de fence corretamente ignorado" \
+  || fail "h3 dentro de fence markdown foi tratado como spec (regressão)"
+
 # Cleanup
 rm -rf /tmp/rime-test-trace-*
 
