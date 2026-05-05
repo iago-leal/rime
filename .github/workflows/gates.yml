@@ -1,0 +1,25 @@
+name: gates
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  sync-skills-check:
+    name: sync-skills --check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar sincronia dos adaptadores
+        run: ./bin/sync-skills.sh --check
+
+  traceability-check:
+    name: traceability-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Validar invariantes da matriz tripartite
+        run: ./.ci/traceability-check.sh
