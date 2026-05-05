@@ -8,7 +8,7 @@
 - **Propósito (1 frase)**: framework lean, harness-agnóstico, iterativo+incremental e test-driven para produção de software com agentes LLM, com matriz de specs anti-regressão.
 - **Responsável**: @iagoleal
 - **Stakeholders**: usuários do framework (engenheiros adotando para projetos-cliente).
-- **Diretório raiz**: `/Users/iagoleal/dev/_rime/v6/`
+- **Diretório raiz**: `/Users/iagoleal/dev/rime/` (repo público em `iago-leal/rime`)
 
 ## Decisões fundacionais
 
@@ -30,7 +30,7 @@
 ## Estrutura de diretórios
 
 ```
-v6/
+rime/
 ├── ARCHITECTURE.md              # este arquivo
 ├── README.md                    # visão geral para adotantes
 ├── .skills/                     # FONTE DE VERDADE
